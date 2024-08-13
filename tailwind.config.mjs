@@ -26,6 +26,14 @@ module.exports = {
 
 			keyframes: {
 
+				"loop-scroll": {
+                    "from": { transform: "translateX(0)" },
+                    "to": { transform: "translateX(-100%)" },
+                },
+				"reverse-loop-scroll": {
+                    "from": { transform: "translateX(-100%)" },
+                    "to": { transform: "translateX(0)" },
+                },
 				"accordion-down": {
 
 					from: { height: "0" },
@@ -41,6 +49,8 @@ module.exports = {
       		},
       		animation: {
 
+				"loop-scroll": "loop-scroll 20s linear infinite",
+				"reverse-loop-scroll": "reverse-loop-scroll 20s linear infinite",
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
 
@@ -51,6 +61,8 @@ module.exports = {
 			},
 			fontFamily: {
 
+				"poppins": [ "poppins", "sans-serif" ],
+				"unbounded": [ "unbounded", "sans-serif" ],
 
 			}
 
