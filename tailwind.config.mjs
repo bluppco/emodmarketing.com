@@ -51,6 +51,8 @@ module.exports = {
 			},
 			fontFamily: {
 
+				"poppins": [ "poppins", "sans-serif" ],
+				"unbounded": [ "unbounded", "sans-serif" ],
 
 			}
 
