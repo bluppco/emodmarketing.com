@@ -1,0 +1,64 @@
+---
+
+// IMPORT ASTRO ATOMS
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// SERVICES ARRAY
+const services = [
+
+    {
+        title:"Award winning work"
+    },
+    {
+        title:"Clients love it"
+    },
+
+]
+
+---
+<section class="hidden md:block bg-black py-14">
+    <div class="bg-yellow-light bg-opacity-90 transform -skew-y-2 py-4">
+        <div class="flex gap-10 overflow-hidden">
+            <div class="flex gap-5 whitespace-nowrap animate-reverse-loop-scroll">
+                {
+    
+                    services.map( ( item ) => ( 
+
+                        <span class="text-5xl font-bold font-unbounded tracking-wide">
+                            <div class="size-8 inline-block">
+                                <PictureInternal 
+                                    alternative_text=""
+                                    source="/icons/asterisk.svg"
+                                />
+                            </div>
+                            { item.title }
+                        </span>
+    
+                    ))
+    
+                }
+            </div>
+            <div class="inline-block">
+                <div class="flex gap-5 whitespace-nowrap animate-reverse-loop-scroll">
+                    {
+        
+                        services.map( ( item ) => ( 
+                                
+                            <span class="text-5xl font-bold font-unbounded tracking-wide">
+                                <div class="size-8 inline-block">
+                                    <PictureInternal 
+                                        alternative_text=""
+                                        source="/icons/asterisk.svg"
+                                    />
+                                </div>
+                                { item.title }
+                            </span>
+        
+                        ))
+        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

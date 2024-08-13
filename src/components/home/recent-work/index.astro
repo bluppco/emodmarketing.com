@@ -1,0 +1,164 @@
+---
+
+// IMPORT ASTRO COMPONENTS
+import RecentWorkCard from "@/components/home/recent-work/card/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import ButtonTransparent from "@/atoms/buttons/transparent/index.astro"
+import HeadingTwoSixXlWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro"
+import Link from "@/atoms/links/index.astro"
+import ParagraphLgCenterWhite from "@/atoms/paragraphs/lg/center/white/index.astro"
+import PictureContain from "@/atoms/picture/internal/contain/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    subtitle: "Take a look at some of the work we did recently.",
+    title: "Some Recent Work",
+
+}
+const button_data = {
+
+    button_link_one: "/",
+    button_link_two: "/",
+    button_text_one: "SEE OUR WORK",
+    button_text_two: "YOU WILL LOVE IT",
+
+}
+const card_data = [
+
+    {
+        link: "/",
+        source: "/images/recent-work/heavensin.jpg",
+        subtitle: "HeavenSin Worldwide",
+        title: "Website",
+    },
+    {
+        link: "/",
+        source: "/images/recent-work/dreammachine.jpg",
+        subtitle: "Dream Machine",
+        title: "Website",
+    },
+    {
+        link: "/",
+        source: "/images/recent-work/potbrothers.jpg",
+        subtitle: "Pot Brothers At Law",
+        title: "Website",
+    },
+    {
+        link: "/",
+        source: "/images/recent-work/nationwide.jpg",
+        subtitle: "Nationwide Equipment Transportation",
+        title: "Website",
+    },
+    {
+        link: "/",
+        source: "/images/recent-work/kelsey.jpg",
+        subtitle: "Mission 48",
+        title: "Website",
+    },
+    {
+        link: "/",
+        source: "/images/recent-work/amaro.jpg",
+        subtitle: "Amaro CBD",
+        title: "Website",
+    },
+
+]
+
+---
+
+<section class="bg-black py-20">
+    <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-4">
+            <HeadingTwoSixXlWhite>{ data.title }</HeadingTwoSixXlWhite>
+            <ParagraphLgCenterWhite>{ data.subtitle }</ParagraphLgCenterWhite>
+        </div> 
+        <div class="work-swiper-container overflow-hidden">
+            <div class="swiper-wrapper overflow-visible">
+                {
+    
+                    card_data.map( ( data ) => (
+    
+                        <div class="swiper-slide">
+                            <RecentWorkCard
+                                link={ data.link }
+                                source={ data.source }
+                                subtitle={ data.subtitle }
+                                title={ data.title }
+                            />
+                        </div>
+    
+                    ))
+    
+                }
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6 ">
+            <Link href={ button_data.button_link_one }>
+                <ButtonPrimary>
+                    { button_data.button_text_one }
+                    <div class="size-4">
+                        <PictureContain
+                            alternative_text=""
+                            source="/icons/arrow-right.svg"
+                        />
+                    </div>
+                </ButtonPrimary>
+            </Link>
+            <Link href={ button_data.button_link_two }>
+                <ButtonTransparent>{ button_data.button_text_two }</ButtonTransparent>
+            </Link>
+        </div>
+    </div>
+</section>
+
+<script>
+    // IMPORT SWIPER JS AND ITS MODULES
+    import Swiper from 'swiper/bundle'
+    import 'swiper/css/bundle'
+
+    // INITIALISE SWIPER
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const swiper = new Swiper('.work-swiper-container', {
+
+            // SLIDES TO SHOW IN MOBILE VIEW
+            autoplay: {
+
+                delay: 3000,
+
+            },
+            loop: true,
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            centeredSlides: true,
+            spaceBetween: 20,
+            breakpoints: {
+
+                // SLIDES TO SHOW OVER SM WINDOW VIEW
+                640: {
+
+                    slidesPerView: 1.2,
+
+                },
+                // SLIDES TO SHOW OVER MEDIUM WINDOW VIEW
+                750: {
+
+                    slidesPerView: 1.2,
+
+                },
+                // SLIDES TO SHOW OVER LARGE WINDOW VIEW
+                1024: {
+
+                    slidesPerView: 1.2,
+
+                },
+
+            },
+            
+        })
+
+    })
+</script>
