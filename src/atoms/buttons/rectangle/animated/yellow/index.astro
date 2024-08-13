@@ -1,0 +1,15 @@
+---
+
+// GET ASTRO PROPS
+const {
+
+    button_text,
+
+} = Astro.props
+
+---
+
+<button class="relative group flex items-center justify-center bg-yellow-light tex-lg font-medium font-unbounded min-h-16 min-w-40">
+    <span class="absolute group-hover:-translate-y-6 group-hover:opacity-0 duration-200">{ button_text }</span>
+    <span class="absolute translate-y-6 group-hover:-translate-y-0 opacity-0 group-hover:opacity-100 duration-200">{ button_text }</span>
+</button>
