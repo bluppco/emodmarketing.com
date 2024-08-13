@@ -1,0 +1,70 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import ContainerSmall from "@/layouts/container-small/index.astro"
+
+// IMPORT ASTRO COMPONENTS
+import Input from "@/components/home/contact-form/input/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonRectangleYellow from "@/atoms/buttons/rectangle/yellow/index.astro"
+import Link from "@/atoms/links/index.astro"
+import HeadingTwoSixXlWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro"
+import ParagraphLgCenterwhite from "@/atoms/paragraphs/lg/center/white/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    button_link: "/",
+    button_text: "Let's Talk!",
+    subtitle: "Great! We're excited to hear from you and let's start something",
+    title: "Have Any Project on Your Mind?",
+
+}
+const input_fields = [
+
+    {
+        placeholder: "Your full Name",
+    },
+    {
+        placeholder: "Your Phone number",
+    },
+    {
+        placeholder: "Your Email Address",
+    },
+    {
+        placeholder: "Company Name",
+    },
+
+]
+
+---
+
+<section class="bg-black py-16">
+    <ContainerSmall>
+        <div class="flex flex-col gap-6">
+            <HeadingTwoSixXlWhite>{ data.title }</HeadingTwoSixXlWhite>
+            <ParagraphLgCenterwhite>{ data.subtitle }</ParagraphLgCenterwhite>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {
+
+                    input_fields.map( ( data ) => (
+
+                        <Input
+                            placeholder={ data.placeholder }
+                        />
+
+                    ))
+
+                }
+                <textarea  
+                class="bg-transparent border-b-2 border-white placeholder:text-gray-400 text-white text-lg font-poppins p-3 focus:outline-none col-span-2" 
+                placeholder="How can we help you?" 
+                rows="1" ></textarea>
+            </form>
+            <Link href={ data.button_link }>
+                <ButtonRectangleYellow>{ data.button_text }</ButtonRectangleYellow>
+            </Link>
+        </div>
+    </ContainerSmall>
+</section>
