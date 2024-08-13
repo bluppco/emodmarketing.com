@@ -1,0 +1,129 @@
+---
+
+// IMPORT ASTRO ATOMS
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// SERVICES ARRAY
+const services = [
+
+    {
+        title:"Digital Marketing"
+    },
+    {
+        title:"Social Media Marketing"
+    },
+    {
+        title:"Website Design"
+    },
+    {
+        title:"Facebook Ads"
+    },
+    {
+        title:"Sales Funnel"
+    },
+
+]
+
+---
+<section class="hidden md:block bg-black py-5">
+    <div class="bg-gray-100 transform skew-y-2 py-2">
+        <div class="flex gap-10 overflow-hidden">
+            <div class="flex gap-10 whitespace-nowrap animate-loop-scroll">
+                {
+
+                    services.map( ( item ) =>{
+
+                        return ( 
+                                <span class="font-bold text-5xl tracking-wide">
+                                    <span class="size-8 inline-block">
+                                        <PictureInternal 
+                                            alternative_text=""
+                                            source="/icons/asterisk.svg"
+                                        />
+                                    </span>
+                                    { item.title }
+                                </span>
+
+                        )
+
+                    })
+
+                }
+            </div>
+            <div class="inline-block">
+                <div class="flex gap-10 whitespace-nowrap animate-loop-scroll">
+                    {
+    
+                        services.map( ( item ) =>{
+    
+                            return ( 
+                                    <span class="font-bold text-5xl tracking-wide">
+                                        <span class="size-8 inline-block">
+                                            <PictureInternal 
+                                                alternative_text=""
+                                                source="/icons/asterisk.svg"
+                                            />
+                                        </span>
+                                        { item.title }
+                                    </span>
+    
+                            )
+    
+                        })
+    
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-amber-300 bg-opacity-90 transform -skew-y-2 py-2">
+        <div class="flex gap-10 overflow-hidden">
+            <div class="flex gap-5 whitespace-nowrap animate-reverse-loop-scroll">
+                {
+    
+                    services.map( ( item ) =>{
+    
+                        return ( 
+                                <span class="font-bold text-5xl tracking-wide">
+                                    <span class="size-8 inline-block">
+                                        <PictureInternal 
+                                            alternative_text=""
+                                            source="/icons/asterisk.svg"
+                                        />
+                                    </span>
+                                    { item.title }
+                                </span>
+    
+                        )
+    
+                    })
+    
+                }
+            </div>
+            <div class="inline-block">
+                <div class="flex gap-5 whitespace-nowrap animate-reverse-loop-scroll">
+                    {
+        
+                        services.map( ( item ) =>{
+        
+                            return ( 
+                                    <span class="font-bold text-5xl tracking-wide">
+                                        <span class="size-8 inline-block">
+                                            <PictureInternal 
+                                                alternative_text=""
+                                                source="/icons/asterisk.svg"
+                                            />
+                                        </span>
+                                        { item.title }
+                                    </span>
+        
+                            )
+        
+                        })
+        
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
