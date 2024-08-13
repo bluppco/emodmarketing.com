@@ -3,9 +3,15 @@
 // IMPORT ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORT ASTRO ATOMS
+import ParagraphLargeCenter from "@/atoms/paragraphs/lg/center/index.astro"
+
+// IMPORT DATA FROM FRONT-MATTER
+import { frontmatter as copyright } from "@/content/footer/copyright.md"
+
 ---
-<footer class="bg-black py-20">
+<footer class="bg-gray-100 py-5 border-t-2 w-full border-black">
     <Container>
-        <p class="text-white">I am footer</p>
+        <ParagraphLargeCenter>{ copyright.title }</ParagraphLargeCenter>
     </Container>
 </footer>
