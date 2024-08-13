@@ -1,0 +1,35 @@
+---
+
+// IMPORT ASTRO ATOMS
+import HeadingThree4XlWhite from "@/atoms/headings/three/4xl/semibold/white/index.astro"
+import Link from "@/atoms/links/index.astro"
+import ParagraphLgWhite from "@/atoms/paragraphs/lg/white/index.astro"
+import PictureCover from "@/atoms/picture/internal/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    link,
+    source,
+    subtitle,
+    title,
+
+} = Astro.props
+
+---
+
+<Link href={ link }>
+    <div class="relative flex flex-col justify-end p-8 min-h-96 group overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full group-hover:translate-x-2 duration-300">
+            <PictureCover
+                alternative_text=""
+                source={ source }
+            />
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(180deg,rgba(10,12,0,0) 0%,#0A0C00 100%)" />
+        <div class="flex flex-col gap-6 z-10">
+            <ParagraphLgWhite>{ title }</ParagraphLgWhite>
+            <HeadingThree4XlWhite>{ subtitle }</HeadingThree4XlWhite>
+        </div>
+    </div>
+</Link>
