@@ -57,7 +57,7 @@ module.exports = {
 			},
 			colors: {
 
-				"#FFFF00":"light-yellow"
+				"#FFFF00":"light-yellow",
 				"yellow-light": "#e3ff04",
 
 			},
