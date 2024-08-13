@@ -1,0 +1,127 @@
+---
+
+// IMPORT ASTRO ATOMS
+import PictureCover from "@/atoms/picture/internal/index.astro"
+
+// HARDCODED DATA
+const images = [
+
+    {
+        source: "/images/recent-work/alte.jpg",
+    },
+    {
+        source: "/images/recent-work/amaro.jpg",
+    },
+    {
+        source: "/images/recent-work/boldmoves.jpg",
+    },
+    {
+        source: "/images/recent-work/dreamluxury.jpg",
+    },
+    {
+        source: "/images/recent-work/dreammachine.jpg",
+    },
+    {
+        source: "/images/recent-work/heavensin.jpg",
+    },
+    {
+        source: "/images/recent-work/jrd.jpg",
+    },
+    {
+        source: "/images/recent-work/kelsey.jpg",
+    },
+    {
+        source: "/images/recent-work/lfycmiami.jpg",
+    },
+    {
+        source: "/images/recent-work/livsober.jpg",
+    },
+    {
+        source: "/images/recent-work/m4i.jpg",
+    },
+    {
+        source: "/images/recent-work/mbt.jpg",
+    },
+    {
+        source: "/images/recent-work/nationwide.jpg",
+    },
+    {
+        source: "/images/recent-work/nobleroofga.jpg",
+    },
+    {
+        source: "/images/recent-work/omni.jpg",
+    },
+    {
+        source: "/images/recent-work/potbrothers.jpg",
+    },
+    {
+        source: "/images/recent-work/w-6.jpg",
+    },
+
+]
+
+---
+
+<section class="bg-black">
+    <div class="work-marquee-swiper-container overflow-hidden">
+        <div class="swiper-wrapper">
+            {
+
+                images.map( ( data ) => (
+
+                    <div class="swiper-slide !flex justify-center">
+                        <div class="w-full aspect-[16/10] rounded-lg overflow-hidden">
+                            <PictureCover
+                                alternative_text=""
+                                source={ data.source }
+                            />
+                        </div>
+                    </div>
+
+                ))
+
+            }
+        </div>
+    </div>
+</section>
+
+<script>
+    // IMPORT SWIPER JS AND ITS MODULES
+    import Swiper from 'swiper/bundle'
+    import 'swiper/css/bundle'
+
+    // INITIALISE SWIPER
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const swiper = new Swiper('.work-marquee-swiper-container', {
+
+            // SLIDES TO SHOW IN MOBILE VIEW
+            autoplay: {
+
+                delay: 0,
+                disableOnInteraction: false,
+
+            },
+            freeMode: true,
+            speed: 10000,
+            loop: true,
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 10,
+            breakpoints: {
+
+                // SLIDES TO SHOW OVER LARGE WINDOW VIEW
+                1024: {
+
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+
+                },
+
+            },
+            
+        })
+
+    })
+</script>
+
