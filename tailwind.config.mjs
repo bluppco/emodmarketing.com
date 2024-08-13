@@ -49,14 +49,15 @@ module.exports = {
       		},
       		animation: {
 
-				"loop-scroll": "loop-scroll 20s linear infinite",
-				"reverse-loop-scroll": "reverse-loop-scroll 20s linear infinite",
+				"loop-scroll": "loop-scroll 25s linear infinite",
+				"reverse-loop-scroll": "reverse-loop-scroll 25s linear infinite",
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
 
 			},
 			colors: {
 
+				"#FFFF00":"light-yellow"
 				"yellow-light": "#e3ff04",
 
 			},
