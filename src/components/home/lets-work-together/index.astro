@@ -1,0 +1,38 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import ButtonReactangleAnimatedBlack from "@/atoms/buttons/rectangle/animated/black/index.astro"
+import HeadingTwo7xlSemibold from "@/atoms/headings/two/7xl/semibold/index.astro"
+import ParagraphLarge from "@/atoms/paragraphs/lg/index.astro" 
+
+// HARDCODED DATA
+const data = {
+
+    button_text:"LET'S TALK",
+    description:"We are digital agency that helps businesses develop immersive and engaging user experiences",
+    title:"Let’s Work Together"
+
+}
+
+---
+<section class="bg-gray-100 py-40">
+    <Container>
+        <div class="space-y-6 justify-center md:grid md:grid-cols-2">
+            <div class="md:mr-20">
+                <HeadingTwo7xlSemibold>{ data.title }</HeadingTwo7xlSemibold>
+            </div>
+            <div class="space-y-10">
+                <div class="md:pr-20">
+                    <ParagraphLarge>{ data.description }</ParagraphLarge>
+                </div>
+                <div class="flex justify-center md:justify-normal md:flex-none">
+                    <ButtonReactangleAnimatedBlack
+                        button_text={ data.button_text }
+                    />
+                </div>
+        </div>
+    </Container>
+</section>
