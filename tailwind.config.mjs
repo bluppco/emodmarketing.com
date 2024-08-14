@@ -57,7 +57,7 @@ module.exports = {
 			},
 			colors: {
 
-				"yellow-light": "#e3ff04",
+				"light_yellow": "#e3ff04",
 
 			},
 			fontFamily: {
