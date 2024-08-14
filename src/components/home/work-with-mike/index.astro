@@ -4,13 +4,14 @@
 import ContainerSmall from "@/layouts/container-small/index.astro"
 
 // IMPORT ASTRO ATOMS
-import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import ButtonArrow from "@/atoms/buttons/arrow/index.astro"
 import ButtonTransparent from "@/atoms/buttons/transparent/index.astro"
 import HeadingTwoSixXlWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro"
 import Link from "@/atoms/links/index.astro"
 import ParagraphLgCenterwhite from "@/atoms/paragraphs/lg/center/white/index.astro"
 import PictureContain from "@/atoms/picture/internal/contain/index.astro"
 import PictureCover from "@/atoms/picture/internal/index.astro"
+import Video from "@/atoms/video/index.astro"
 
 // HARDCODED DATA
 const data = {
@@ -42,31 +43,18 @@ const button_data = {
                     source={ data.source }
                 />
             </div>
-            <HeadingTwoSixXlWhite>{ data.title }<span class="text-yellow-light">{ data.title_highlight }</span></HeadingTwoSixXlWhite>
-            <ParagraphLgCenterwhite>{ data.subtitle }</ParagraphLgCenterwhite>
+            <div class="flex flex-col gap-4 items-center lg:px-14">
+                <HeadingTwoSixXlWhite>{ data.title }<span class="text-light_yellow">{ data.title_highlight }</span></HeadingTwoSixXlWhite>
+                <ParagraphLgCenterwhite>{ data.subtitle }</ParagraphLgCenterwhite>
+            </div>
             <div class="max-w-[538px] w-full aspect-video rounded-xl overflow-hidden">
-                <iframe 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    frameborder="0"
-                    class="w-full h-full"
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    src={ data.video_source } 
-                    title="Website Before And After"  
-                >
-                </iframe>
+                <Video
+                    src={ data.video_source }
+                />
             </div>
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <Link href={ button_data.button_link_one }>
-                    <ButtonPrimary>
-                        { button_data.button_text_one }
-                        <div class="size-4">
-                            <PictureContain
-                                alternative_text=""
-                                source="/icons/arrow-right.svg"
-                            />
-                        </div>
-                    </ButtonPrimary>
+                    <ButtonArrow>{ button_data.button_text_one }</ButtonArrow>
                 </Link>
                 <Link href={ button_data.button_link_two }>
                     <ButtonTransparent>
