@@ -1,0 +1,111 @@
+---
+
+//IMPORT ASTRO ATOMS
+import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import ButtonTransparent from "@/atoms/buttons/transparent/index.astro"
+import HeadingTwo6xlSemiboldCenterWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro" 
+import HeadingFourLargeSemiboldBoldWhite from "@/atoms/headings/four/lg/semibold/white/index.astro"
+import Link from "@/atoms/links/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// SERVICES ARRAY
+const services = [
+
+    {
+        description:"Generate more leads, more than you can handle with our proven marketing techniques. Our strategies and ads help us generate more business for you.",
+        source:"/images/service-1.webp",
+        title:"Leads Generation",
+    },
+    {
+        description:"Our amazing design team helps you in building a wesbite that has best user-experience, user interface, and the one that converts visitors to customers.",
+        source:"/images/service-2.webp",
+        title:"Website Design",
+    },
+    {
+        description:"Once you have website setup, SEO is the most important thing. We use our proven strategies, find better keywords to rank you at best possible position in your market.",
+        source:"/images/service-1.webp",
+        title:"SEO",
+    },
+    {
+        description:"We will help you increasing your online presence with digital marketing. Out marketeers use different tools and their experience to help your brand grow in online world.",
+        source:"/images/service-2.webp",
+        title:"Digital Marketing",
+    },
+
+]
+
+// HARDCODED DATA
+const data ={
+
+    buttonPrimary_link:"/#contact",
+    buttonPrimary_text:"work with us now",
+    buttonTransparent_text:"Only 2 spots left",
+    title:"Top-Notch"
+
+}
+
+---
+<section class="bg-black py-10">
+    <div class="space-y-6">
+        <HeadingTwo6xlSemiboldCenterWhite>{ data.title }<span class="text-light_yellow">Services</span></HeadingTwo6xlSemiboldCenterWhite>
+        <div class="flex flex-col mx-2 md:grid md:grid-cols-2 gap-10 md:mx-40 xl:mx-60 2xl:mx-80">
+            {
+
+                services.map( ( item ) =>{
+
+                    return (
+
+                            <div class="bg-dark_gray rounded-lg p-5 space-y-5">
+                                <div>
+                                    <PictureInternal 
+                                        alternative_text={ item.title }
+                                        source={ item.source }
+                                    />
+                                </div>
+                                <HeadingFourLargeSemiboldBoldWhite>{ item.title }</HeadingFourLargeSemiboldBoldWhite>
+                                <div>
+                                    <span class="text-white">{ item.description }</span>
+                                </div>
+                            </div>
+
+                    )
+
+                })
+
+            }
+        </div>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+            <div>
+                <Link aria_label={ data.buttonPrimary_text } href={ data.buttonPrimary_link }>
+                    <div>
+                        <ButtonPrimary>{ data.buttonPrimary_text }
+                            <span class="size-6 ml-3">
+                                <PictureInternal 
+                                    alternative_text=""
+                                    source="/icons/arrow-right.svg"                 
+                                />
+                            </span>
+                        </ButtonPrimary>
+                    </div>
+                </Link>
+            </div>
+            <div>
+                <ButtonTransparent>
+                    <span class="size-3 mr-3">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="/icons/bullet-dot.svg"                 
+                        />
+                    </span>
+                    { data.buttonTransparent_text }
+                    <span class="size-3 ml-3">
+                        <PictureInternal 
+                            alternative_text=""
+                            source="/icons/bullet-dot.svg"                 
+                        />
+                    </span>
+                </ButtonTransparent>
+            </div>
+        </div>
+    </div>
+</section>
