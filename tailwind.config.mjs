@@ -50,7 +50,9 @@ module.exports = {
       		animation: {
 
 				"loop-scroll": "loop-scroll 50s linear infinite",
+				"loop-scroll-fast": "loop-scroll 20s linear infinite",
 				"reverse-loop-scroll": "reverse-loop-scroll 50s linear infinite",
+				"reverse-loop-scroll-fast": "reverse-loop-scroll 20s linear infinite",
 				"accordion-down": "accordion-down 0.2s ease-out",
         		"accordion-up": "accordion-up 0.2s ease-out",
 
