@@ -1,7 +1,7 @@
 ---
 
 //IMPORT ASTRO ATOMS
-import ButtonPrimary from "@/atoms/buttons/primary/index.astro"
+import ButtonPrimaryLarge from "@/atoms/buttons/primary/primary-large/index.astro"
 import ButtonTransparent from "@/atoms/buttons/transparent/index.astro"
 import HeadingTwo6xlSemiboldCenterWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro" 
 import HeadingFourSemiboldBoldWhite from "@/atoms/headings/four/semibold/white/index.astro"
@@ -56,7 +56,7 @@ const data ={
                     return (
 
                             <div class="bg-dark_gray rounded-lg p-5 space-y-5">
-                                <div>
+                                <div class="w-full aspect-[3/2] border-2 border-white rounded-lg overflow-hidden">
                                     <PictureInternal 
                                         alternative_text={ item.title }
                                         source={ item.source }
@@ -78,14 +78,14 @@ const data ={
             <div>
                 <Link aria_label={ data.buttonPrimary_text } href={ data.buttonPrimary_link }>
                     <div>
-                        <ButtonPrimary>{ data.buttonPrimary_text }
+                        <ButtonPrimaryLarge>{ data.buttonPrimary_text }
                             <span class="size-6 ml-3">
                                 <PictureInternal 
                                     alternative_text=""
                                     source="/icons/arrow-right.svg"                 
                                 />
                             </span>
-                        </ButtonPrimary>
+                        </ButtonPrimaryLarge>
                     </div>
                 </Link>
             </div>
