@@ -1,0 +1,13 @@
+/* CUSTOM PAGINATION FOR RECENT WORKS */
+.swiper-pagination-bullet {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    border: 1px solid white !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #E3FF04 !important;
+    border: none;
+}
