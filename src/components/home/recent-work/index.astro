@@ -4,12 +4,15 @@
 import RecentWorkCard from "@/components/home/recent-work/card/index.astro"
 
 // IMPORT ASTRO ATOMS
+<<<<<<< HEAD
 import ButtonPrimary from "@/atoms/buttons/primary/primary-large/index.astro"
+=======
+import ButtonArrow from "@/atoms/buttons/arrow/index.astro"
+>>>>>>> 9b2a4989b851f957fecd4897598c1095c03a96b8
 import ButtonTransparent from "@/atoms/buttons/transparent/index.astro"
 import HeadingTwoSixXlWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro"
 import Link from "@/atoms/links/index.astro"
 import ParagraphLgCenterWhite from "@/atoms/paragraphs/lg/center/white/index.astro"
-import PictureContain from "@/atoms/picture/internal/contain/index.astro"
 
 // HARDCODED DATA
 const data = {
@@ -70,8 +73,8 @@ const card_data = [
 ---
 
 <section class="bg-black py-20">
-    <div class="flex flex-col gap-10">
-        <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-1">
             <HeadingTwoSixXlWhite>{ data.title }</HeadingTwoSixXlWhite>
             <ParagraphLgCenterWhite>{ data.subtitle }</ParagraphLgCenterWhite>
         </div> 
@@ -95,17 +98,10 @@ const card_data = [
                 }
             </div>
         </div>
+        <div class="flex items-center justify-center pagination"></div>
         <div class="flex flex-col md:flex-row items-center justify-center gap-6 ">
             <Link href={ button_data.button_link_one }>
-                <ButtonPrimary>
-                    { button_data.button_text_one }
-                    <div class="size-4">
-                        <PictureContain
-                            alternative_text=""
-                            source="/icons/arrow-right.svg"
-                        />
-                    </div>
-                </ButtonPrimary>
+                <ButtonArrow>{ button_data.button_text_one }</ButtonArrow>
             </Link>
             <Link href={ button_data.button_link_two }>
                 <ButtonTransparent>{ button_data.button_text_two }</ButtonTransparent>
@@ -134,7 +130,15 @@ const card_data = [
             slidesPerView: 1,
             slidesPerGroup: 1,
             centeredSlides: true,
-            spaceBetween: 20,
+            spaceBetween: 40,
+            pagination: {
+
+                el: ".pagination",
+                clickable: true,
+                bulletClass: 'swiper-pagination-bullet', 
+                bulletActiveClass: 'swiper-pagination-bullet-active',
+
+            },
             breakpoints: {
 
                 // SLIDES TO SHOW OVER SM WINDOW VIEW
