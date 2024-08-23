@@ -1,0 +1,299 @@
+---
+
+//IMPORT ASTRO ATOMS
+import ButtonPrimaryCapitalize from "@/atoms/buttons/primary/capitalize/index.astro"
+import HeadingTwo6xlSemiboldCenterWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro" 
+import HeadingFourSemiboldBoldWhite from "@/atoms/headings/four/semibold/white/index.astro"
+import HeadingThree4xlSemiboldWhite from "@/atoms/headings/three/4xl/semibold/white/index.astro"
+import ParagraphLargeCenterWhite from "@/atoms/paragraphs/lg/center/white/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// STARTSINMINS ARRAY
+const startsinminutes =[
+
+    {
+        source:"/images/start-in-10-min-1.png"
+    },
+    {
+        source:"/images/start-in-10-min-2.png"
+    },
+    {
+        source:"/images/start-in-10-min-3.png"
+    },
+    {
+        source:"/images/start-in-10-min-4.png"
+    },
+    {
+        source:"/images/start-in-10-min-5.png"
+    },
+    {
+        source:"/images/start-in-10-min-6.svg"
+    },
+    {
+        source:"/images/start-in-10-min-7.avif"
+    },
+    {
+        source:"/images/start-in-10-min-8.png"
+    },
+    {
+        source:"/images/start-in-10-min-9.png"
+    },
+    {
+        source:"/images/start-in-10-min-10.webp"
+    },
+
+]  
+
+// SERVICES ARRAY
+const services = [
+
+    {
+        description:"Once you subscribe, we add you to an exclusive slack channel with team of designer and Marketeer.",
+        sub_title:"Start Instantly",
+        title:"01."
+    },
+    {
+        description:"Once we assign people to the project they work tirelessly, try different stuff and help you grow in this digital world.",
+        sub_title:"Call Meeting",
+        title:"02."
+    },
+    {
+        description:"Once you subscribe, we add you to an exclusive slack channel with team of designer and Marketeer.",
+        sub_title:"Sit back and watch results",
+        title:"03."
+    },
+
+]
+
+// SERVICES1 ARRAY
+const services1 = [
+
+    {
+        title:"Web design",
+    },
+    {
+        title:"Web devlopment",
+    },
+    {
+        title:"Maintenance",
+    },
+    {
+        title:"shopify store design",
+    },
+
+]
+
+// SERVICES2 ARRAY
+const services2 = [
+
+    {
+        title:"app design",
+    },
+    {
+        title:"app devlopment",
+    },
+    {
+        title:"UI/UX design",
+    },
+
+]
+
+// SERVICES3 ARRAY
+const services3 = [
+
+    {
+        title:"content creation",
+    },
+    {
+        title:"social media marketing",
+    },
+    {
+        title:"SEO",
+    },
+    {
+        title:"facebook ads",
+    },
+
+]
+
+// HARDCODED DATA
+const data ={
+
+    sub_title1:"Our process is so simple that you can start right away.",
+    sub_title2:"We have collaborated and partnered with:",
+    sub_title3:"We take care of Everything",
+    title:"Start in "
+}
+
+---
+<section class="py-10 bg-black">
+    <div class="space-y-6">
+        <HeadingTwo6xlSemiboldCenterWhite>{ data.title }<span class="text-light_yellow">10 Minutes</span></HeadingTwo6xlSemiboldCenterWhite>
+        <div>
+            <ParagraphLargeCenterWhite>{ data.sub_title1 }</ParagraphLargeCenterWhite>
+            <ParagraphLargeCenterWhite>{ data.sub_title2 }</ParagraphLargeCenterWhite>
+        </div>
+        <div class="grid grid-cols-2 gap-10 mx-40">
+            {
+
+                services.map( ( item ) =>{
+
+                    return (
+
+                            <div class="bg-dark_gray border-2 border-white rounded-lg p-5 space-y-2">
+                                <HeadingThree4xlSemiboldWhite>{ item.title }</HeadingThree4xlSemiboldWhite>
+                                <HeadingFourSemiboldBoldWhite>{ item.sub_title }</HeadingFourSemiboldBoldWhite>
+                                <div>
+                                    <span class="text-white text-lg font-poppins">{ item.description }</span>
+                                </div>
+                            </div>
+
+                    )
+
+                })
+
+            }
+            <div class="border-2 border-white rounded-lg p-5 space-y-4">
+                <HeadingFourSemiboldBoldWhite>{ data.sub_title3 }</HeadingFourSemiboldBoldWhite>
+                <div class="flex gap-2 overflow-hidden">
+                    <div class="flex gap-2 animate-loop-scroll-fast">
+                        {  
+                            services1.map( ( item ) =>{
+
+                                return (
+
+                                        <ButtonPrimaryCapitalize>
+                                            <span class="size-3">
+                                                <PictureInternal
+                                                    alternative_text=""
+                                                    source="/icons/asterisk.svg"
+                                                />
+                                            </span>{ item.title }
+                                        </ButtonPrimaryCapitalize>
+
+                                )
+
+
+                            })
+                        }
+                    </div>
+                    <div class="inline-flex">
+                        <div class="flex gap-2 animate-loop-scroll-fast">
+                            {  
+                                services1.map( ( item ) =>{
+    
+                                    return (
+    
+                                            <ButtonPrimaryCapitalize>
+                                                <span class="size-3">
+                                                    <PictureInternal
+                                                        alternative_text=""
+                                                        source="/icons/asterisk.svg"
+                                                    />
+                                                </span>{ item.title }
+                                            </ButtonPrimaryCapitalize>
+    
+                                    )
+    
+    
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 overflow-hidden">
+                    <div class="flex gap-2 animate-reverse-loop-scroll-fast">
+                        {  
+                            services2.map( ( item ) =>{
+
+                                return (
+
+                                        <ButtonPrimaryCapitalize>
+                                            <span class="size-3">
+                                                <PictureInternal
+                                                    alternative_text=""
+                                                    source="/icons/asterisk.svg"
+                                                />
+                                            </span>{ item.title }
+                                        </ButtonPrimaryCapitalize>
+
+                                )
+
+
+                            })
+                        }
+                    </div>
+                    <div class="inline-flex">
+                        <div class="flex gap-2 animate-reverse-loop-scroll-fast">
+                            {  
+                                services2.map( ( item ) =>{
+    
+                                    return (
+    
+                                            <ButtonPrimaryCapitalize>
+                                                <span class="size-3">
+                                                    <PictureInternal
+                                                        alternative_text=""
+                                                        source="/icons/asterisk.svg"
+                                                    />
+                                                </span>{ item.title }
+                                            </ButtonPrimaryCapitalize>
+    
+                                    )
+    
+    
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-2 overflow-hidden">
+                    <div class="flex gap-2 animate-loop-scroll-fast">
+                        {  
+                            services3.map( ( item ) =>{
+
+                                return (
+
+                                        <ButtonPrimaryCapitalize>
+                                            <span class="size-3">
+                                                <PictureInternal
+                                                    alternative_text=""
+                                                    source="/icons/asterisk.svg"
+                                                />
+                                            </span>{ item.title }
+                                        </ButtonPrimaryCapitalize>
+
+                                )
+
+
+                            })
+                        }
+                    </div>
+                    <div class="inline-flex">
+                        <div class="flex gap-2 animate-loop-scroll-fast">
+                            {  
+                                services3.map( ( item ) =>{
+    
+                                    return (
+    
+                                            <ButtonPrimaryCapitalize>
+                                                <span class="size-3">
+                                                    <PictureInternal
+                                                        alternative_text=""
+                                                        source="/icons/asterisk.svg"
+                                                    />
+                                                </span>{ item.title }
+                                            </ButtonPrimaryCapitalize>
+    
+                                    )
+    
+    
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,86 @@
+---
+
+// IMPORT ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORT ASTRO ATOMS
+import HeadingTwo6xlSemiboldCenterWhite from "@/atoms/headings/two/6xl/semibold/center/white/index.astro"
+import HeadingThree4xlSemibold from "@/atoms/headings/three/4xl/semibold/index.astro"
+import HeadingThree4xlSemiboldWhite from "@/atoms/headings/three/4xl/semibold/white/index.astro"
+import ParagraphLargeWhite from "@/atoms/paragraphs/lg/white/index.astro"
+
+// STRATEGY ARRAY
+const strategies = [
+
+    {
+        description:"It will only take our team 36 to 48 hours to reach out to the target audience",
+        sub_title:"Ads Up and Running",
+        title:"48 Hours"
+    },
+    {
+        description:"Just Shoot us a message for all your designs, if you don't like them we will revise. No questions Asked!",
+        sub_title:"Ads and Designs for you",
+        title:"Unlimited"
+    },
+    {
+        description:"Our Design team will design website that brings customers to you.",
+        sub_title:"Website Design",
+        title:"Top Notch"
+    },
+    {
+        description:"Our Ads strategies are so good, they bring business to you in no time",
+        sub_title:"Startegies for business",
+        title:"Ultimate"
+    },
+
+]
+
+---
+<section class="bg-black py-20">
+    <Container>
+        <div class="space-y-10">
+            <div class="xl:mx-40">
+                <HeadingTwo6xlSemiboldCenterWhite>Strategies that bring <span class="text-light_yellow">business</span> more than you can <span class="text-light_yellow">handle</span></HeadingTwo6xlSemiboldCenterWhite>
+            </div>
+            <div class="space-y-4 md:space-y-0 md:grid md:grid-cols-2 gap-8 md:mx-28 xl:mx-60 2xl:mx-72">
+                {  
+
+                    strategies.map( ( item , index ) =>{
+
+                        if( index == 1 ){
+
+                            return (
+
+                                <div class="border rounded-lg p-5 bg-light_yellow">
+                                    <HeadingThree4xlSemibold>{ item.title }</HeadingThree4xlSemibold>
+                                    <p class="font-unbounded font-bold">{ item.sub_title }</p>
+                                    <div>
+                                        <span>{ item.description }</span>
+                                    </div>
+                                </div>
+
+                            )
+
+                        } else {
+
+                            return (
+
+                                <div class="border rounded-lg p-5 bg-dark_gray">
+                                    <HeadingThree4xlSemiboldWhite>{ item.title }</HeadingThree4xlSemiboldWhite>
+                                    <ParagraphLargeWhite>{ item.sub_title }</ParagraphLargeWhite>
+                                    <div>   
+                                        <span class="text-white">{ item.description }</span>
+                                    </div>
+                                </div>
+
+                            )
+
+                        }
+
+                    })
+
+                }
+            </div>
+        </div>
+    </Container>
+</section>
